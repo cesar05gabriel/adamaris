@@ -1,6 +1,7 @@
 package edu.itesa.adamaris.android.activities;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 
 import edu.itesa.adamaris.android.R;
@@ -17,7 +18,16 @@ public class SignInActivity extends ActionBarActivity {
                     .add(R.id.container, new SignInFragment())
                     .commit();
         }
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+
+    }
 }

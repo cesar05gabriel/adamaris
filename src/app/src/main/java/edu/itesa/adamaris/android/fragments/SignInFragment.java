@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.common.SignInButton;
+
 import edu.itesa.adamaris.android.R;
 
 
@@ -18,6 +20,10 @@ public class SignInFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_signin, container, false);
+
+        SignInButton button = (SignInButton) rootView.findViewById(R.id.sign_in_button);
+        button.setSize(SignInButton.SIZE_WIDE);
+
         return rootView;
     }
 }
