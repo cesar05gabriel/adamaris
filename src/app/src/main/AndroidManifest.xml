@@ -17,7 +17,14 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+<<<<<<< HEAD
 
+=======
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+>>>>>>> parent of a2608e0... Revert "Android Manifest Repaired 0.1"
         </activity>
         <activity
             android:hardwareAccelerated="true"
