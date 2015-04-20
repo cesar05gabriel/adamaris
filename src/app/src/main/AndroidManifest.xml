@@ -20,7 +20,8 @@
         <activity
             android:hardwareAccelerated="true"
             android:name=".activities.SignInActivity"
-            android:label="@string/title_activity_signin" >
+            android:label="@string/title_activity_signin"
+            android:noHistory="true">
         </activity>
         <activity
             android:name=".activities.SplashActivity"

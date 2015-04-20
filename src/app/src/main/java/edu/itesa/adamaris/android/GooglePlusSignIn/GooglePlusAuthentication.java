@@ -44,6 +44,8 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
     private boolean mIntentInProgress;
     private boolean mSignInClicked;
     private ConnectionResult mConnectionResult;
+    private boolean isConnected = false;
+
 
     public GooglePlusAuthentication (Context context, ConnectionCallbacks connectionCallbacks,
                                     OnConnectionFailedListener onConnectionFailedListener)
@@ -63,10 +65,10 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
     }
     public void logOff ()
     {
-        if (mGoogleApiClient.isConnected()) {
+        if (this.isConnected()) {
             Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-            mGoogleApiClient.disconnect();
-            mGoogleApiClient.connect();
+            this.disconnect();
+            this.connect();
         }
     }
 
@@ -75,6 +77,7 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
         if(!mGoogleApiClient.isConnected())
         {
             mGoogleApiClient.connect();
+            this.setConnected(mGoogleApiClient.isConnected());
         }
     }
 
@@ -83,6 +86,7 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
         if(mGoogleApiClient.isConnected())
         {
             mGoogleApiClient.disconnect();
+            this.setConnected(mGoogleApiClient.isConnected());
         }
     }
 
@@ -93,7 +97,7 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
                 mConnectionResult.startResolutionForResult(activity, RC_SIGN_IN);
             } catch (SendIntentException e) {
                 mIntentInProgress = false;
-                mGoogleApiClient.connect();
+                this.connect();
             }
         }
     }
@@ -103,7 +107,7 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
     }
 
     public void onConnectionSuspended(int i) {
-        mGoogleApiClient.connect();
+       this.connect();
     }
 
     public void onConnectionFailed(ConnectionResult connectionResult) {
@@ -130,6 +134,14 @@ public class GooglePlusAuthentication implements ConnectionCallbacks,
                 resolveSignInError(activity);
             }
         }
+    }
+
+    public boolean isConnected() {
+        return isConnected;
+    }
+
+    private void setConnected(boolean isConnected) {
+        this.isConnected = isConnected;
     }
 
 }
