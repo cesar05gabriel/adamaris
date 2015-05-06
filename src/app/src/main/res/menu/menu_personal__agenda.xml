@@ -4,4 +4,32 @@
     tools:context="edu.itesa.adamaris.android.activities.Personal_Agenda">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+
+        <Item
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton2"
+            android:src="@drawable/arrow_left_alt1"
+            android:background="#7f8c8d"
+            android:layout_weight="0.09"
+            android:onClick="mostrar" />
+
+        <ImageView
+            android:layout_width="71dp"
+            android:layout_height="75dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/iconoas" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Agenda Personal"
+            android:id="@+id/textView"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_weight="0.17"
+            android:textStyle="bold"/>
+
+
 </menu>

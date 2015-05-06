@@ -6,5 +6,16 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_signin">SigninActivity</string>
     <string name="title_activity_personal__agenda">Personal_Agenda</string>
+    <string name="title_activity_personal">personal</string>
+    <string name="title_activity_personal_adapter">PersonalAdapter</string>
+    <string name="title_activity_personal__data_source">Personal_DataSource</string>
+    <string name="title_activity_school__agenda">School_Agenda</string>
+    <string name="title_activity_table_time">TableTime</string>
+    <string name="title_activity_prueba">prueba</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
 </resources>

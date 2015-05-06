@@ -12,16 +12,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.content.Intent;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import javax.sql.DataSource;
+
+import edu.itesa.adamaris.android.activities.Personal;
+import edu.itesa.adamaris.android.activities.PersonalAdapter;
 import edu.itesa.adamaris.android.activities.Personal_Agenda;
+import edu.itesa.adamaris.android.activities.Personal_DataSource;
+import edu.itesa.adamaris.android.activities.School_Agenda;
+import edu.itesa.adamaris.android.activities.TableTime;
 
 
 public class MainActivity extends Activity {
+
+    ListView lista;
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        lista = (ListView)findViewById(R.id.list);
+        adapter = new PersonalAdapter(this, Personal_DataSource.PERSONAL);
+        lista.setAdapter(adapter);
 
     }
 
@@ -39,6 +54,17 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void show(View view)
+    {
+        Intent intent = new Intent(this, School_Agenda.class);
+        startActivity(intent);
+    }
+
+    public void regarde(View view)
+    {
+        Intent intent = new Intent(this, TableTime.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

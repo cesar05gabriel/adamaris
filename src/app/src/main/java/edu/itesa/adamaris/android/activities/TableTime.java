@@ -1,36 +1,28 @@
 package edu.itesa.adamaris.android.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import edu.itesa.adamaris.android.MainActivity;
 import edu.itesa.adamaris.android.R;
 
-public class Personal_Agenda extends ActionBarActivity {
+public class  TableTime extends ActionBarActivity {
 
-    ListView lista;
-    ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal__agenda);
-        lista = (ListView)findViewById(R.id.list);
-        adapter = new PersonalAdapter(this, Personal_DataSource.PRUEBA);
-        lista.setAdapter(adapter);
+        setContentView(R.layout.activity_table_time);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_personal__agenda, menu);
+        getMenuInflater().inflate(R.menu.menu_table_time, menu);
         return true;
     }
 

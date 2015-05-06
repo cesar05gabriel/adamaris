@@ -13,31 +13,32 @@ import android.widget.ListView;
 import edu.itesa.adamaris.android.MainActivity;
 import edu.itesa.adamaris.android.R;
 
-public class Personal_Agenda extends ActionBarActivity {
+public class School_Agenda extends Activity {
 
-    ListView lista;
     ArrayAdapter adapter;
+    ListView lista;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal__agenda);
+        setContentView(R.layout.activity_school__agenda);
         lista = (ListView)findViewById(R.id.list);
-        adapter = new PersonalAdapter(this, Personal_DataSource.PRUEBA);
+        adapter = new PersonalAdapter(this, Personal_DataSource.Escolar);
         lista.setAdapter(adapter);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_personal__agenda, menu);
-        return true;
     }
 
     public void mostrar(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_school__agenda, menu);
+        return true;
     }
 
     @Override
